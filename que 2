@@ -1,1 +1,38 @@
+import java.io.*;
+public class Main {
+    public static void main(String[] args) throws IOException {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      int units;
+      String name, id;
+      System.out.print("enter the Consumer name:");
+      name = br.readLine();
+      System.out.print("enter the Consumer number/ID:");
+      id = br.readLine();
+      System.out.print("enter the units used:");
+      units = Integer.parseInt(br.readLine());
+      double bill=0;
+      int copy=units;
+      if(units<=100) bill = units*3;
+      else{
+        bill = 300;
+        units-=100;
+        if(units<=100) bill = bill+ (units*5);
+      else{
+        bill = 800;
+        units-=100;
+        if(units<=300) bill = bill+ (units*7);
+      else{
+        units-=300;
+        bill = 800 + (7*300) + (units*10);
+      }
+      }
+      }
+      if(bill>5000) bill= 1.05*bill; 
+      System.out.println("Consumer Details:");
+      System.out.println("consumer name:" + name);
+      System.out.println("Consumer number/ID:" + id);
+      System.out.println("total unit used:" + copy);
+      System.out.println("total bill:₹" + bill);
 
+      }
+    }
